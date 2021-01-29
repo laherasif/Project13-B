@@ -1,0 +1,21 @@
+type Books {
+  id: ID!
+  name: String!
+  url: String!
+}
+
+input TodoInput {
+  id: ID!
+  name: String!
+  url: String!
+}
+
+type Query {
+  getBooks: [Books]
+}
+
+type Mutation {
+  addBookMark(book: TodoInput!): Books
+  updateBookMark(book: TodoInput!): Books
+  deleteBookMark(bookId: String!): String
+}
